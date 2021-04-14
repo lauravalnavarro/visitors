@@ -17,7 +17,7 @@ const Visitor = mongoose.model("Visitor", visitorSchema);
 app.get('/', (req, res) =>{
 
   if (req.query.name === undefined){
-      Visitor.create({name: 'Anonimo', date: Date.now()}, function(err){
+      Visitor.create({name: 'Anónimo', date: Date.now()}, function(err){
         if(err) return console.error(err);
       });
   } else {
