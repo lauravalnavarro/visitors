@@ -15,9 +15,17 @@ const visitorSchema = mongoose.Schema({
 const Visitor = mongoose.model("Visitor", visitorSchema);
 
 app.get('/', (req, res) =>{
-    Visitor.create({name: req.query.name, date: Date.now()}, function(err){
+
+  if (req.query.name === undefined){
+      Visitor.create({name: 'Anonimo', date: Date.now()}, function(err){
         if(err) return console.error(err);
+      });
+  } else {
+    Visitor.create({name: req.query.name, date: Date.now()}, function(err){
+      if(err) return console.error(err);
     });
+  }   
+
     res.send(`<h1>El visitante fue almacenado con éxito</h1>`);
 });
 
