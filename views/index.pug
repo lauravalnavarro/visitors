@@ -1,20 +1,16 @@
 html
-    head
-        title Visitantes recurrentes 
-    body
-        table
-            thead
-                tr
-                    th 
-                        h1 Id
-                    th
-                        h1 Name
-                    th
-                        h1 Visits
-                    
-            tbody
-                each visitor in visitors
-                    tr
-                        td= visitor._id
-                        td= visitor.name
-                        td= visitor.count
+  head
+    title= pageTitle 
+  body
+    table
+      thead
+        tr 
+          th id
+          th Name 
+          th Visits
+      tbody
+        each visitor in visitors 
+          tr 
+            td= visitor._id
+            td= visitor.name
+            td= visitor.count
