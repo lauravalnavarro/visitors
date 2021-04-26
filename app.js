@@ -32,7 +32,7 @@ app.get('/', async (req, res) =>{
       await Visitor.create({name: req.query.name || 'Anónimo'});
   }   
   const visitors = await Visitor.find();
-  return res.render('index', {
+  return await res.render('index', {
     pageTitle: 'Visitantes recurrentes',
     visitors});
 });
